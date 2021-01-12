@@ -1,1 +1,32 @@
-<div>Hello World</div>
+<header>
+  <div class="header">
+    <div class="title">ビジュアルタスク</div>
+    <ul class="header-btn">
+      <% if user_signed_in? %>
+        <li><%= link_to 'ニックネーム', "#", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+<div class="wrapper">
+  <div class="side-bar">
+  <%# 仮置き %>
+    <div class="room">room1</div>
+    <div class="room">room2</div>
+  </div>
+  <main class="main">
+    <div>
+      <ul class="input">
+        <li><%= link_to '空いてる時間を入力する', "#", class: "top-link" %></li>
+        <li><%= link_to '勧誘を確認する', "#", class: "top-link" %></li>
+        <li><%= link_to '部屋を確認する', "#", class: "top-link" %></li>
+      </ul>
+    </div>
+    <div>勧誘一覧</div>
+    <div>期限切れの勧誘</div>
+  </main>
+</div>
